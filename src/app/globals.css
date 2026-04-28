@@ -1,0 +1,243 @@
+@import "tailwindcss";
+
+/* ──────────────────────────────────────────────────────────────
+   Erwin Public — design tokens
+   Tailwind v4 reads `@theme` and generates utility classes
+   (e.g. bg-paper-50, text-tutor, border-rule, font-serif).
+   Names mirror the brand book's CSS custom properties so they
+   stay greppable across the codebase.
+   ────────────────────────────────────────────────────────────── */
+@theme {
+  /* Paper spine — warm neutrals */
+  --color-paper-50:  #fbf8f2;
+  --color-paper-100: #f5f0e6;
+  --color-paper-200: #ebe3d3;
+  --color-paper-300: #d9cdb6;
+  --color-paper-400: #b9a988;
+  --color-paper-500: #8a7a5c;
+  --color-paper-600: #5d5340;
+  --color-paper-700: #3d3527;
+  --color-paper-800: #26211a;
+  --color-paper-900: #181410;
+
+  /* Ink + rule */
+  --color-ink:      #1a160f;
+  --color-ink-soft: #4a4234;
+  --color-ink-mute: #7a6f5a;
+  --color-rule:     #c9bda3;
+
+  /* Tool hues — same chroma/lightness band, varied hue */
+  --color-tutor:   #c25a3a; /* terracotta — Academic/Tutor */
+  --color-library: #6b5d3e; /* olive ink — Library */
+  --color-atlas:   #2f6b56; /* foliage — Atlas */
+  --color-gallery: #8e4c6d; /* mulberry — Gallery */
+  --color-records: #2b5577; /* slate blue — Records */
+  --color-almanac: #c08a2e; /* harvest — Almanac */
+
+  /* Soft tints (for backgrounds) */
+  --color-tutor-tint:   #f6e3d7;
+  --color-library-tint: #ece5d0;
+  --color-atlas-tint:   #d6e4d9;
+  --color-gallery-tint: #ecd8e1;
+  --color-records-tint: #d4dee8;
+  --color-almanac-tint: #f2e2bd;
+
+  /* Type families — wired to next/font CSS variables in layout.tsx */
+  --font-serif: var(--font-source-serif), 'Iowan Old Style', Georgia, serif;
+  --font-sans:  var(--font-public-sans), -apple-system, 'Segoe UI', sans-serif;
+  --font-mono:  var(--font-jetbrains-mono), ui-monospace, 'SF Mono', Menlo, monospace;
+
+  /* Radius — brand uses 2px across the board */
+  --radius-brand: 2px;
+}
+
+/* Layout primitives kept as plain CSS vars (not utility classes) */
+:root {
+  --gutter: clamp(20px, 4vw, 64px);
+  --max:    1280px;
+}
+
+html, body { margin: 0; padding: 0; }
+
+body {
+  font-family: var(--font-sans);
+  background: var(--color-paper-50);
+  color: var(--color-ink);
+  font-size: 16px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  font-feature-settings: 'ss01', 'cv01';
+}
+
+/* Subtle paper texture */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    radial-gradient(circle at 20% 30%, rgba(120, 90, 40, 0.025), transparent 50%),
+    radial-gradient(circle at 80% 70%, rgba(120, 90, 40, 0.025), transparent 50%);
+  z-index: -1;
+}
+
+a { color: inherit; }
+
+/* ──────────────────────────────────────────────────────────────
+   Component utility classes — brand primitives
+   ────────────────────────────────────────────────────────────── */
+
+/* Buttons */
+.ep-btn {
+  font-family: var(--font-sans);
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  padding: 12px 20px;
+  border-radius: 2px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.15s ease;
+}
+.ep-btn.primary { background: var(--color-ink); color: var(--color-paper-50); }
+.ep-btn.primary:hover { background: var(--color-paper-700); }
+.ep-btn.tonal {
+  background: var(--color-paper-100);
+  color: var(--color-ink);
+  border-color: var(--color-rule);
+}
+.ep-btn.tonal:hover { background: var(--color-paper-200); }
+.ep-btn.ghost {
+  background: transparent;
+  color: var(--color-ink);
+  border-color: var(--color-ink);
+}
+.ep-btn.ghost:hover { background: var(--color-ink); color: var(--color-paper-50); }
+.ep-btn.text {
+  background: transparent;
+  color: var(--color-ink);
+  padding: 12px 4px;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 4px;
+}
+.ep-btn .arrow { font-family: var(--font-serif); }
+
+/* Inputs */
+.ep-input {
+  font-family: var(--font-sans);
+  font-size: 15px;
+  padding: 12px 14px;
+  border: 1px solid var(--color-rule);
+  background: var(--color-paper-50);
+  border-radius: 2px;
+  width: 100%;
+  outline: none;
+  transition: border-color 0.15s;
+}
+.ep-input:focus { border-color: var(--color-ink); }
+
+.ep-label {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-ink-mute);
+  display: block;
+  margin-bottom: 8px;
+}
+
+.field-stack { width: 100%; }
+
+/* Badges */
+.ep-badge {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  border: 1px solid currentColor;
+}
+.ep-badge .dot {
+  width: 6px; height: 6px; border-radius: 50%;
+  background: currentColor;
+}
+
+/* Card */
+.ep-card {
+  background: var(--color-paper-50);
+  border: 1px solid var(--color-rule);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+  position: relative;
+  border-top: 3px solid var(--color-ink);
+}
+.ep-card .eyebrow {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-ink-mute);
+}
+.ep-card .title {
+  font-family: var(--font-serif);
+  font-size: 22px;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  line-height: 1.15;
+  margin: 0;
+}
+.ep-card .body {
+  font-family: var(--font-sans);
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--color-ink-soft);
+}
+
+/* Screen chrome — for embedded tool previews */
+.screen-frame {
+  border: 1px solid var(--color-rule);
+  background: var(--color-paper-50);
+  overflow: hidden;
+  position: relative;
+}
+.screen-chrome {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  background: var(--color-paper-100);
+  border-bottom: 1px solid var(--color-rule);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--color-ink-mute);
+}
+.screen-chrome .dots { display: flex; gap: 5px; }
+.screen-chrome .dots span {
+  width: 9px; height: 9px;
+  border-radius: 50%;
+  background: var(--color-paper-300);
+}
+.screen-chrome .url {
+  margin-left: 12px;
+  padding: 3px 10px;
+  background: var(--color-paper-50);
+  border: 1px solid var(--color-rule);
+  border-radius: 2px;
+  flex: 1;
+  text-align: center;
+}
+.screen-body {
+  min-height: 540px;
+  position: relative;
+}
