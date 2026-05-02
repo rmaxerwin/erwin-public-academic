@@ -13,13 +13,15 @@ export default async function OpengraphImage() {
           height: "100%",
           display: "flex",
           flexDirection: "column",
+          justifyContent: "space-between",
           backgroundColor: "#fbf8f2",
-          padding: 96,
+          padding: 80,
           fontFamily: "serif",
         }}
       >
-        <div style={{ display: "flex", alignItems: "center", gap: 32 }}>
-          <svg width="120" height="120" viewBox="0 0 44 44" fill="none">
+        {/* Top — mark + small wordmark */}
+        <div style={{ display: "flex", alignItems: "center", gap: 24 }}>
+          <svg width="84" height="84" viewBox="0 0 44 44" fill="none">
             <circle cx="22" cy="22" r="20" stroke="#1a160f" strokeWidth="1.5" fill="none" />
             <line x1="2" y1="22" x2="42" y2="22" stroke="#1a160f" strokeWidth="1.5" />
             <circle cx="22" cy="22" r="9" fill="#c25a3a" />
@@ -28,6 +30,7 @@ export default async function OpengraphImage() {
           </svg>
           <div
             style={{
+              display: "flex",
               fontSize: 18,
               letterSpacing: "0.18em",
               textTransform: "uppercase",
@@ -39,36 +42,43 @@ export default async function OpengraphImage() {
           </div>
         </div>
 
-        <div style={{ flex: 1, display: "flex", flexDirection: "column", justifyContent: "center" }}>
+        {/* Middle — title + tagline */}
+        <div style={{ display: "flex", flexDirection: "column" }}>
           <div
             style={{
-              fontSize: 96,
-              lineHeight: 1.05,
+              display: "flex",
+              fontSize: 104,
+              lineHeight: 1,
               letterSpacing: "-0.02em",
               color: "#1a160f",
-              display: "flex",
-              flexWrap: "wrap",
             }}
           >
-            <span>Erwin&nbsp;</span>
-            <span style={{ fontStyle: "italic", color: "#4a4234" }}>Public&nbsp;</span>
-            <span style={{ color: "#7a6f5a" }}>·&nbsp;</span>
-            <span>Academic</span>
+            Erwin&nbsp;
+            <span style={{ display: "flex", fontStyle: "italic", color: "#4a4234" }}>
+              Public
+            </span>
+            <span style={{ display: "flex", color: "#7a6f5a", padding: "0 18px" }}>
+              ·
+            </span>
+            Academic
           </div>
           <div
             style={{
-              marginTop: 28,
-              fontSize: 32,
-              lineHeight: 1.4,
+              display: "flex",
+              marginTop: 32,
+              fontSize: 30,
+              lineHeight: 1.35,
               color: "#4a4234",
               fontStyle: "italic",
-              maxWidth: 900,
+              maxWidth: 980,
             }}
           >
-            Texas Essential Knowledge and Skills, browseable. Public domain, free, and ready to use.
+            Texas Essential Knowledge and Skills, browseable. Public domain,
+            free, and ready to use.
           </div>
         </div>
 
+        {/* Bottom — badge */}
         <div
           style={{
             display: "flex",
@@ -81,8 +91,15 @@ export default async function OpengraphImage() {
             color: "#c25a3a",
           }}
         >
-          <div style={{ width: 8, height: 8, borderRadius: 999, backgroundColor: "#c25a3a" }} />
-          <div>Free · Public</div>
+          <div
+            style={{
+              width: 8,
+              height: 8,
+              borderRadius: 999,
+              backgroundColor: "#c25a3a",
+            }}
+          />
+          <div style={{ display: "flex" }}>Free · Public</div>
         </div>
       </div>
     ),
