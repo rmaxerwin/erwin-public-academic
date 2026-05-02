@@ -48,13 +48,14 @@ export default async function OpengraphImage() {
             style={{
               display: "flex",
               alignItems: "center",
+              gap: 28,
               fontSize: 104,
               lineHeight: 1,
               letterSpacing: "-0.02em",
               color: "#1a160f",
             }}
           >
-            Erwin&nbsp;
+            <span style={{ display: "flex" }}>Erwin</span>
             <span style={{ display: "flex", fontStyle: "italic", color: "#4a4234" }}>
               Public
             </span>
@@ -65,10 +66,9 @@ export default async function OpengraphImage() {
                 height: 18,
                 borderRadius: 999,
                 backgroundColor: "#c25a3a",
-                margin: "0 28px",
               }}
             />
-            Academic
+            <span style={{ display: "flex" }}>Academic</span>
           </div>
           <div
             style={{
