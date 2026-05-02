@@ -47,6 +47,7 @@ export default async function OpengraphImage() {
           <div
             style={{
               display: "flex",
+              alignItems: "center",
               fontSize: 104,
               lineHeight: 1,
               letterSpacing: "-0.02em",
@@ -57,9 +58,16 @@ export default async function OpengraphImage() {
             <span style={{ display: "flex", fontStyle: "italic", color: "#4a4234" }}>
               Public
             </span>
-            <span style={{ display: "flex", color: "#7a6f5a", padding: "0 18px" }}>
-              ·
-            </span>
+            <span
+              style={{
+                display: "flex",
+                width: 18,
+                height: 18,
+                borderRadius: 999,
+                backgroundColor: "#c25a3a",
+                margin: "0 28px",
+              }}
+            />
             Academic
           </div>
           <div
