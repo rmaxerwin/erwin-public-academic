@@ -1,0 +1,63 @@
+{
+  "district_tea_number": "220905",
+  "source_url": "https://rptsvr1.tea.texas.gov/perfreport/tapr/index.html",
+  "source_note": "Campus names are well-known FWISD schools. TEA campus numbers and enrollment figures are PLACEHOLDERS — every campus row has needs_review:true and must be reconciled against the latest TAPR campus data before it is treated as authoritative.",
+  "campuses": [
+    {
+      "tea_campus_number": "220905001",
+      "name": "Paschal High School",
+      "grade_levels": "9-12",
+      "enrollment": null,
+      "needs_review": true
+    },
+    {
+      "tea_campus_number": "220905002",
+      "name": "Polytechnic High School",
+      "grade_levels": "9-12",
+      "enrollment": null,
+      "needs_review": true
+    },
+    {
+      "tea_campus_number": "220905041",
+      "name": "Stripling Middle School",
+      "grade_levels": "6-8",
+      "enrollment": null,
+      "needs_review": true
+    },
+    {
+      "tea_campus_number": "220905042",
+      "name": "McLean Middle School",
+      "grade_levels": "6-8",
+      "enrollment": null,
+      "needs_review": true
+    },
+    {
+      "tea_campus_number": "220905101",
+      "name": "Alice Carlson Applied Learning Center",
+      "grade_levels": "PK-5",
+      "enrollment": null,
+      "needs_review": true
+    },
+    {
+      "tea_campus_number": "220905102",
+      "name": "Lily B. Clayton Elementary School",
+      "grade_levels": "PK-5",
+      "enrollment": null,
+      "needs_review": true
+    },
+    {
+      "tea_campus_number": "220905103",
+      "name": "Bruce Shulkey Elementary School",
+      "grade_levels": "PK-5",
+      "enrollment": null,
+      "needs_review": true
+    },
+    {
+      "tea_campus_number": "220905104",
+      "name": "Springdale Elementary School",
+      "grade_levels": "PK-5",
+      "enrollment": null,
+      "needs_review": true
+    }
+  ]
+}

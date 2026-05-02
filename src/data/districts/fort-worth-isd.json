@@ -1,0 +1,11 @@
+{
+  "tea_district_number": "220905",
+  "name": "Fort Worth ISD",
+  "county": "Tarrant",
+  "region": "ESC 11",
+  "enrollment": null,
+  "enrollment_year": null,
+  "needs_review_fields": ["enrollment", "enrollment_year"],
+  "source_url": "https://rptsvr1.tea.texas.gov/perfreport/tapr/index.html",
+  "source_note": "TEA Texas Academic Performance Reports (TAPR) — district number 220905 verified; enrollment figure must be pulled from latest published TAPR before this row is treated as authoritative."
+}
